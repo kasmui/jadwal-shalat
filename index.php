@@ -62,7 +62,7 @@
                 <font color="brown" size="4">JADWAL WAKTU SHALAT BERBAGAI METODE</font>
                 <hr/>
                     <div class="header">
-                    <span style="font-size: 12px; color: blue;">Masukkan posisi Lintang (latitude) dan Bujur (longitude) tempat Anda: <br/></span>
+                    <span style="font-size: 16px; color: blue;">Masukkan posisi Lintang (latitude) dan Bujur (longitude) tempat Anda: <br/></span>
                     <form class="form" action="javascript:update();">
                     	<span style="font-size: 16px;">Latitude:</span> <input type="text" value="-7.07" id="latitude" size="2" onchange="update();" />&nbsp;
                     	<span style="font-size: 16px;">Longitude:</span> <input type="text" value="110.4" id="longitude" size="2" onchange="update();" />&nbsp;<br/>
