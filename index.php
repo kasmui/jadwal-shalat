@@ -3,7 +3,7 @@
 ?>
 <head>
 	<title> Jadwal Waktu Shalat Bulanan </title>
-    <style>
+    	<style>
     		body, table, tr, form {font-family: tahoma; font-size: 20px; color: #404040; text-align: center; margin: 0; padding: 0}
     		pre {font-family: courier, serif, size: 10pt; margin: 0px 8px;}
     		input {font-size: 16px;}
@@ -17,13 +17,13 @@
     		.timetable td {border-width: 1px; border-spacing: 1px; padding-left: 15px; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; border-style: inset; border-color: #CCCCCC; }
     		.head-row {color: #d90036; background-color: #bfefff;}
     		.today-row {background-color: #ffefbf; color: #d90036}
-    </style>	
-    <style>
-        hr{
-       	    border-color: pink;
-       }
-    </style>    
-    <script type="text/javascript">
+    	</style>	
+    	<style>
+        	hr{
+       	    	border-color: pink;
+       		}
+    	</style>    
+    	<script type="text/javascript">
 
 		var iTanggalM = 0;
 		var iTanggalH = 0;
@@ -129,7 +129,6 @@
 			document.write(sDate);
 		}
 	</script>	
-
     	<script type="text/javascript" src="PrayTimes.js"></script>
 </head>
 
