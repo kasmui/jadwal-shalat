@@ -136,7 +136,6 @@
 
 <body>
 <center>	
-    <small>
     <div align="center">
         <table align="center">
             <tr>
@@ -156,7 +155,6 @@
             </tr>
         </table>
     </div>    
-    </small>
 </center> 
 	
 <div align="center" style="margin-top: 7px">
