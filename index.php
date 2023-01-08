@@ -67,7 +67,7 @@
 			var namaBulanJ = new Array( "Suro","Sapar","Mulud","Ba'da Mulud","Jumadil Awal","Jumadil Akhir","Rejeb","Ruwah","Poso","Syawal","Dulkaidah","Besar");
 			var namaHariE = new Array("Thursday","Friday","Saturday","Sunday","Monday","Tuesday","Wednesday");
 			var namaHariH = new Array("Al-Hamis","Al-Jum'a","As-Sabt","Al-Ahad","Al-Itsnayna","Ats-Tsalatsa'","Al-Arba'a'");
-			var namaHariI = new Array("Kamis","Jumat","Sabtu","Minggu","Senin","Selasa","Rabu");
+			var namaHariI = new Array("Kamis","Jumat","Sabtu","Ahad","Senin","Selasa","Rabu");
 			var namaHariJ = new Array("Wage","Kliwon","Legi","Pahing","Pon","Wage","Kliwon");
 
 			now = new Date(); 
