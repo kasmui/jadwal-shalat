@@ -8,3 +8,5 @@ Sedangkan waktu Shubuh Muhammadiyah menggunakan keputusan parameter baru yaitu 1
 
 Source code bisa diunduh melalui link https://blogchem.com/shalat/bulanan/index.zip
 
+Sebagai tambahan, ada script untuk penentuan tanggal bulan Qomariyah.
+
