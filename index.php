@@ -30,6 +30,32 @@
 <body>
 <div align="center" style="margin-top: 7px">
     <table>
+	    <tr>
+            <td  text-align="justify">
+                <fieldset>
+                    <table border="0" align="center" class="a">
+                        <tr>
+                            <td text-align="justify">
+                                <?php
+                                    date_default_timezone_set("Asia/Jakarta");
+                        	        $harini = date("d/M/Y - H:i:s A");
+                        
+                                    echo "<b>Posisi Matahari: ".$harini."</b><br/>";
+                                    $wektu=date("Y-M-d");
+                                    $sun_info = date_sun_info(strtotime($wektu), -7.06, 110.4);
+                                    foreach ($sun_info as $key => $val) {
+                                        echo "<font color='red'>$key:</font> " . date("H:i:s", $val) . "; \n";
+                                    }
+                                ?>     
+                                <br/><br/>
+                                Melalui data di atas, maka dapat ditentukan beberapa hal: <b>1) data sunrise</b> = Terbit matahari, <b>2) data sunset + waktu ikhtiyat 3 menit</b> = waktu Maghrib, <b>3) data transit + waktu ikhtiyat 3 menit</b> = waktu Dhuhur, <b>4) data astronomical twilight begin</b> = waktu Shubuh, <b>5) data astronomical twilight end + waktu ikhtiyat 3 menit</b> = waktu Isya.            
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>  
+	    
         <tr>
             <td align="center">
                 <hr/>
