@@ -74,7 +74,7 @@
                     		<option value="1">1</option>
                         </select>&nbsp;<br/>
                         
-                    	<span style="font-size: 16px;">Method:</span> 
+                    	<span style="font-size: 16px;">Metode:</span> 
                     	<select id="method" size="1" style="font-size: 16px;" onchange="update()">
                     		<option value="DepagRI">Depag RI</option>
                     		<option value="ISRN">ISRN</option>
@@ -108,7 +108,7 @@
                     </table>
                     
                     <div align="center" style="margin-top: 7px">
-                        <span style="font-size: 14px;">Source code: <a target="_blank" href="http://praytimes.org/wiki/Code">PrayTimes</a>&nbsp;-&nbsp;Time Format: <a id="time-format" href="javascript:switchFormat(1)" title="Change clock format" class="command"></a>
+                        <span style="font-size: 14px;">Download <a target="_blank" href="https://blogchem.com/shalat/bulanan/index.zip">Source code</a> | <a target="_blank" href="http://praytimes.org/wiki/Code">Link PrayTimes</a> | <a target="_blank" href="https://blogchem.com/falak/">Blog Falak</a>&nbsp;-&nbsp;Time Format: <a id="time-format" href="javascript:switchFormat(1)" title="Change clock format" class="command"></a>
                     	</span>
                     </div>
             </td>
