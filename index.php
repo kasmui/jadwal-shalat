@@ -142,15 +142,15 @@
             <tr>
                 <td border="0" align="center">
                 <center>
-                    <span style="font-size:12px; color: black;">
+                    <span style="font-size:14px; color: black;">
                     <script type="text/javascript">tulis_Tanggal(7);</script>
                     </span>
                     <a href="https://time.is/Semarang" id="time_is_link" rel="nofollow"></a>
-                    <span style="font-size:12px; color: black;">&nbsp;&nbsp;-&nbsp;&nbsp;</span>
-                    <span id="Semarang_z41c" style="font-size:12px; color: black;"></span>
+                    <span style="font-size:14px; color: black;">&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+                    <span id="Semarang_z41c" style="font-size:14px; color: black;"></span>
                     <script src="//widget.time.is/t.js" type="text/javascript"></script>
                     <script type="text/javascript">time_is_widget.init({Semarang_z41c:{}});</script>
-                    <span style="font-size:12px; color: black;">&nbsp;&nbsp;WIB</span>
+                    <span style="font-size:14px; color: black;">&nbsp;&nbsp;WIB</span>
                 </center>
                 </td>
             </tr>
@@ -221,8 +221,8 @@
                     </form>
                     </div>
                     
-                    <span style="font-size: 12px;"><b><font color="red" size="3">Catatan:</font></b> <br/>
-                    <span style="font-size: 12px; color: blue;">Default Waktu Shubuh Menurut PP. Muhammadiyah</span>
+                    <span style="font-size: 14px;"><b><font color="red" size="3">Catatan:</font></b> <br/>
+                    <span style="font-size: 16px; color: blue;">Default Waktu Shubuh Menurut PP. Muhammadiyah</span>
                     <br/><br/>
                     Waktu Shubuh dan Isya ISRN ditentukan menurut data empirik Tim - ISRN-UHAMKA Jakarta, Shubuh: -13,2&deg; Isya: -13,0&deg;.
                     <br/> Sedangkan waktu Shubuh Muhammadiyah menggunakan keputusan parameter baru yaitu 18&deg;, bukan lagi 20&deg;.</span><hr/>
