@@ -49,7 +49,9 @@
 			l = l-(intPart((30-j)/15))*(intPart((17719*j)/50))-(intPart(j/16))*(intPart((15238*j)/43))+29;
 			iBulanH = intPart((24*l)/709);
 			iTanggalH = l-intPart((709*iBulanH)/24);
-			tambahan = 0;
+			
+			tambahan = 1;  // Tambahan adalah angká penyesuaian, biasanya -1,0,+1
+			
 			iTanggalH = iTanggalH + tambahan;
 			iTahunH = 30*n+j-30;
 			iBulanH -= 1;
