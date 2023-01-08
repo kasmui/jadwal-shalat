@@ -239,7 +239,7 @@
                     </table>
                     
                     <div align="center" style="margin-top: 7px">
-                        <span style="font-size: 14px;">Download <a target="_blank" href="https://blogchem.com/shalat/bulanan/index.zip">Source code</a> | <a target="_blank" href="http://praytimes.org/wiki/Code">Link PrayTimes</a> | <a target="_blank" href="https://blogchem.com/falak/">Blog Falak</a>&nbsp;-&nbsp;Time Format: <a id="time-format" href="javascript:switchFormat(1)" title="Change clock format" class="command"></a>
+                        <span style="font-size: 14px;">Download <a target="_blank" href="https://blogchem.com/shalat/bulanan/index.zip">Source code</a> | <a target="_blank" href="http://praytimes.org/wiki/Code">Link PrayTimes</a> | <a target="_blank" href="https://blogchem.com/falak/">Link Blog Falak</a>&nbsp;-&nbsp;Time Format: <a id="time-format" href="javascript:switchFormat(1)" title="Change clock format" class="command"></a>
                     	</span>
                     </div>
             </td>
