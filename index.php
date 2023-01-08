@@ -4,7 +4,7 @@
 <head>
 	<title> Jadwal Waktu Shalat Bulanan </title>
     	<style>
-    		body, table, tr, form {font-family: tahoma; font-size: 20px; color: #404040; text-align: center; margin: 0; padding: 0}
+    		body, tr, form {font-family: tahoma; font-size: 20px; color: #404040; text-align: center; margin: 0; padding: 0}
     		pre {font-family: courier, serif, size: 10pt; margin: 0px 8px;}
     		input {font-size: 16px;}
     		.header {background:#eef; border-bottom: 1px solid #ddd; padding: 15px;}
@@ -162,11 +162,11 @@
 <div align="center" style="margin-top: 7px">
     <table>
 	    <tr>
-            <td  text-align="justify">
+            <td  align="justify">
                 <fieldset>
                     <table border="0" align="center" class="a">
                         <tr>
-                            <td text-align="justify">
+                            <td align="justify">
                                 <?php
                                     date_default_timezone_set("Asia/Jakarta");
                         	        $harini = date("d/M/Y - H:i:s A");
