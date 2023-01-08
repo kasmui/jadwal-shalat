@@ -23,11 +23,141 @@
        	    border-color: pink;
        }
     </style>    
+    <script type="text/javascript">
 
-	<script type="text/javascript" src="PrayTimes.js"></script>
+		var iTanggalM = 0;
+		var iTanggalH = 0;
+		var iBulanM = 0;
+		var iBulanH = 0;
+		var iTahunM = 0;
+		var iTahunH = 0;
+		var iTahunJ = 0;
+
+		function intPart(floatNum) {
+			return(floatNum<-0.0000001? Math.ceil(floatNum-0.0000001) : Math.floor(floatNum+0.0000001));
+		}
+
+		function hitung_Hijriah(d,m,y) {
+			mPart = (m-13)/12;
+			jd = intPart((1461*(y+4800+intPart(mPart)))/4)+
+			intPart((367*(m-1-12*(intPart(mPart))))/12)-
+			intPart((3*(intPart((y+4900+intPart(mPart))/100)))/4)+d-32075;
+			l = jd-1948440+10632;
+			n = intPart((l-1)/10631);
+			l = l-10631*n+354;
+			j = (intPart((10985-l)/5316))*(intPart((50*l)/17719))+(intPart(l/5670))*(intPart((43*l)/15238));
+			l = l-(intPart((30-j)/15))*(intPart((17719*j)/50))-(intPart(j/16))*(intPart((15238*j)/43))+29;
+			iBulanH = intPart((24*l)/709);
+			iTanggalH = l-intPart((709*iBulanH)/24);
+			tambahan = 0;
+			iTanggalH = iTanggalH + tambahan;
+			iTahunH = 30*n+j-30;
+			iBulanH -= 1;
+		}
+
+ 
+
+		function hitung_Tanggal(format) {
+			var namaBulanE = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+			var namaBulanH = new Array( "Muharram","Safar","Rabi Al-Awwal","Rabi Al-Thani","Jumada Al-Ula","Jumada Al-Thani","Rajab","Shaban","Ramadan","Shawwal","Dhul Qada","Dhul Hijja");
+			var namaBulanI = new Array( "Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+			var namaBulanHI = new Array( "Muharram","Safar","Rabi'ul Awal","Rabi'ul Akhir","Jumadil Awal","Jumadil Akhir","Rajab","Sya'ban","Ramadhan","Syawal","Dzul Qa'dah","Dzul Hijjah");
+			var namaBulanJ = new Array( "Suro","Sapar","Mulud","Ba'da Mulud","Jumadil Awal","Jumadil Akhir","Rejeb","Ruwah","Poso","Syawal","Dulkaidah","Besar");
+			var namaHariE = new Array("Thursday","Friday","Saturday","Sunday","Monday","Tuesday","Wednesday");
+			var namaHariH = new Array("Al-Hamis","Al-Jum'a","As-Sabt","Al-Ahad","Al-Itsnayna","Ats-Tsalatsa'","Al-Arba'a'");
+			var namaHariI = new Array("Kamis","Jumat","Sabtu","Minggu","Senin","Selasa","Rabu");
+			var namaHariJ = new Array("Wage","Kliwon","Legi","Pahing","Pon","Wage","Kliwon");
+
+			now = new Date(); 
+			iTanggalM = now.getDate();
+			iBulanM = now.getMonth();
+			iTahunM = now.getYear();
+			if(iTahunM<1900) { iTahunM += 1900 }; // Y2K
+			
+			hitung_Hijriah(iTanggalM,iBulanM,iTahunM);
+			hr = Date.UTC(iTahunM,iBulanM,iTanggalM,0,0,0)/1000/60/60/24;
+			
+			iTahunJ = iTahunH+512;
+			sHariE = namaHariE[hr%7];         //string nama hari : Inggris
+			sHariH = "Yaum "+namaHariH[hr%7]; //string nama hari : Arab
+			sHariI = namaHariI[hr%7];         //string nama hari : Indonesia
+			sHariJ = namaHariJ[hr%5];         //string nama hari : Jawa (hari pasar)
+			sBulanE = namaBulanE[iBulanM];    //string nama bulan : Masehi - Inggris
+			sBulanH = namaBulanH[iBulanH];    //string nama bulan : Hijriah - Arab
+			sBulanI = namaBulanI[iBulanM];    //string nama bulan : Masehi - Indonesia
+			sBulanHI = namaBulanHI[iBulanH];  //string nama bulan : Hijriah - Indonesia
+			sBulanJ = namaBulanJ[iBulanH];    //string nama bulan : Hijriah - Jawa
+
+			//iTanggalM : int tanggal Masehi (Inggris/Indonesia)
+			//iTanggalH : int tanggal Hijriah (Arab/Indonesia/Jawa)
+			
+			zTanggalM = iTanggalM<10? "0"+iTanggalM : iTanggalM; //int tanggal Masehi (Inggris/Indonesia), + leading zero
+			zTanggalH = iTanggalH<10? "0"+iTanggalH : iTanggalH; //int tanggal Hijriah (Arab/Indonesia/Jawa), + leading zero
+			iBulanM += 1; //int bulan Masehi (Inggris/Indonesia)
+			iBulanH += 1; //int bulan Hijriah (Arab/Indonesia/Jawa)
+			zBulanM = iBulanM<10? "0"+iBulanM : iBulanM; //int bulan Masehi (Inggris/Indonesia), + leading zero
+			zBulanH = iBulanH<10? "0"+iBulanH : iBulanH; //int bulan Hijriah (Arab/Indonesia/Jawa), + leading zero
+
+			//iTahunM : int tahun Masehi (Inggris/Indonesia)
+			//iTahunH : int tahun Hijriah (Arab/Indonesia)
+			//iTahunJ : int tahun Jawa
+			//FORMAT :
+			//1 (default) (Indonesia)              : Selasa, 1 Januari 1980
+			//2           (English)                : Tuesday, 1 January 1980
+			//3           (Indonesia + hari pasar) : Selasa Legi, 1 Januari 1980
+			//4           (Jawa)                   : Selasa Legi, 12 Sapar 1912
+			//5           (Arab/Hijriah)           : Yaum Ats-Tsalatsa, 12 Safar 1400 H
+			//6           (Indonesia/Hijriah)      : Selasa, 12 Safar 1400 H
+			//7           (English + Jawa :P)      : Tuesday Legi, 12 Sapar 1912
+			//de-el-el?                          : masih banyak variasi? :D :D :D
+
+			switch(format) {
+				case 2 : { sDate = sHariE+", "+iTanggalM+" "+sBulanE+" "+iTahunM;break; }
+				case 3 : { sDate = sHariI+" "+sHariJ+", "+iTanggalM+" "+sBulanI+" "+iTahunM;break; }
+				case 4 : { sDate = sHariI+" "+sHariJ+", "+iTanggalH+" "+sBulanJ+" "+iTahunJ;break; }
+				case 5 : { sDate = sHariH+", "+iTanggalH+" "+sBulanH+" "+iTahunH+" H";break; }
+				case 6 : { sDate = sHariI+", "+iTanggalH+" "+sBulanHI+" "+iTahunH+" H";break; }
+				case 7 : { sDate = sHariI+" "+sHariJ+", "+iTanggalM+" "+sBulanI+" "+iTahunM+" / "+iTanggalH+" "+sBulanHI+" "+iTahunH+" H / "+iTanggalH+" "+sBulanJ+" "+iTahunJ+" J";break; }
+				case 8 : { sDate = sHariE+" "+sHariJ+", "+iTanggalH+" "+sBulanJ+" "+iTahunJ;break; }
+				default : { sDate = sHariI+" "+sHariJ+", "+iTanggalM+" "+sBulanI+" "+iTahunM;break; }
+			}
+			return(sDate);
+		}
+
+		function tulis_Tanggal(format) {
+			sDate = hitung_Tanggal(format);
+			document.write(sDate);
+		}
+	</script>	
+
+    	<script type="text/javascript" src="PrayTimes.js"></script>
 </head>
 
 <body>
+<center>	
+    <small>
+    <div align="center">
+        <table align="center">
+            <tr>
+                <td border="0" align="center">
+                <center>
+                    <span style="font-size:12px; color: black;">
+                    <script type="text/javascript">tulis_Tanggal(7);</script>
+                    </span>
+                    <a href="https://time.is/Semarang" id="time_is_link" rel="nofollow"></a>
+                    <span style="font-size:12px; color: black;">&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+                    <span id="Semarang_z41c" style="font-size:12px; color: black;"></span>
+                    <script src="//widget.time.is/t.js" type="text/javascript"></script>
+                    <script type="text/javascript">time_is_widget.init({Semarang_z41c:{}});</script>
+                    <span style="font-size:12px; color: black;">&nbsp;&nbsp;WIB</span>
+                </center>
+                </td>
+            </tr>
+        </table>
+    </div>    
+    </small>
+</center> 
+	
 <div align="center" style="margin-top: 7px">
     <table>
 	    <tr>
